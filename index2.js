@@ -1,6 +1,7 @@
-const { fetchMyIP, fetchMyCoordByIP, fetchISSFlyOverTimes } = require('./iss_promised');
+const { nextISSTimesForMyLocation } = require('./iss_promised');
+const { formatFlyOverTimes } = require('./index')
 
-fetchMyIP()
-  .then(fetchMyCoordByIP)
-  .then(fetchISSFlyOverTimes)
-  .then(body => console.log(body));
+nextISSTimesForMyLocation()
+  .then((flyOverTimes) => {
+    formatFlyOverTimes(flyOverTimes);
+  })

@@ -15,3 +15,7 @@ nextISSTimesForMyLocation((error, flyOverTimes) => {
   }
   formatFlyOverTimes(flyOverTimes);
 });
+
+module.exports = {
+  formatFlyOverTimes
+}
