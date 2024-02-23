@@ -6,7 +6,8 @@ const fetchMyIP = function(callback) {
       callback(error, null);
       return;
     }
-    const ip = JSON.parse(body);
+    body = JSON.parse(body);
+    const ip = body.ip;
     callback(null, ip);
   }
   );
